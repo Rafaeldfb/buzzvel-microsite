@@ -1,4 +1,3 @@
-// import {Providers} from "./providers";
 import { Raleway, Roboto } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/app/ui/navbar/Navbar"
@@ -27,13 +26,6 @@ export default function RootLayout({ children }) {
         <Navbar />
 
         {children}
-        {/* <Providers>
-          <>
-            <Navbar />
-
-            {children}
-          </>
-        </Providers> */}
       </body>
     </html>
   );
