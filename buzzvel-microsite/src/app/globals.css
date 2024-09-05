@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-brand-red: #BE0000;
+  --color-dynamic-red: #E94F4F;
+  --color-hover-red: #FF4C4C;
+  --color-highlight-white: #F2F2F2;
+  --color-dark-bg: #0D0D0D;
+  --color-secondary-bg: #1E1E1E;
+  --color-light-text: #E0E0E0;
+  --color-medium-text: #B0B0B0;
+}
+
+/* @media (prefers-color-scheme: dark) {
+  :root {
+    
+  }
+} */
+
+body {
+  color: var(--color-light-text);
+  background-color: var(--color-dark-bg);
+  padding: 0 0.5rem;
+  box-sizing: border-box;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
