@@ -58,7 +58,7 @@ export default function Navbar() {
         {!mobileMenuOpen ? burguerMenuIcon() : closeIcon()}
 
         <div 
-        className={`absolute top-[50px] right-2 p-10 bg-secondary-bg rounded gap-3 ${
+        className={`absolute top-[50px] right-2 p-10 bg-secondary-bg rounded gap-3 z-50 ${
           mobileMenuOpen ? 'flex flex-col' : 'hidden'
         }`}
         >
