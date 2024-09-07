@@ -60,47 +60,22 @@ function IntroductionTopics({topic, even}) {
           quality='100'
           style={{
             maxWidth: 'unset',
-            translate: isInView ? '-25% -25%' : '25% 25%',
+            translate: isInView ? '-20% -20%' : '30% 30%',
             transition: "all 1.5s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
           }}
         />
       </figure>
 
-      <article className="topic-content w-10/12 md:full flex flex-col absolute md:static bottom-2 left-1 p-2 md:p-3 bg-dynamic-red rounded-md md:rounded-xl">
-        <h3 className="text-xl font-semibold mb-6">
+      <article className="topic-content w-10/12 md:h-fit flex flex-col absolute md:static bottom-2 left-1 p-2 md:p-6 lg:p-12 bg-dynamic-red rounded-md md:rounded-xl">
+        <h3 className="text-xl md:text-2xl lg:4xl font-semibold mb-6">
           {title}
         </h3>
 
-        <p className="font-roboto text-base md:text-lg">
+        <p className="font-roboto text-base md:text-xl lg:2xl">
           {content}
         </p>
       </article>
     </div>
-    // <div 
-    //   className={`topic-item mb-12 flex md:flex-nowrap ${even && 'flex-row-reverse'}`}
-    // >
-    //   <figure className={`topic-image relative w-full md:w-4/12 ${mobilePadding} md:px-4`}>
-    //     <Image
-    //       className="object-cover"
-    //       src={img}
-    //       alt={`image for ${title}`}
-    //       loading='lazy'
-    //       placeholder='blur'
-    //       quality='100'
-    //       fill
-    //     />
-    //   </figure>
-
-    //   <article className="topic-content md:w-auto flex flex-col">
-    //     <h3 className="text-xl font-semibold mb-6">
-    //       {title}
-    //     </h3>
-
-    //     <p className="font-roboto text-lg">
-    //       {content}
-    //     </p>
-    //   </article>
-    // </div>
   )
 };
 
