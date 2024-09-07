@@ -1,22 +1,36 @@
-import React from 'react';
+'use client'
+
+import React, {useEffect, useState} from 'react';
 import style from '../home/hero.module.css';
+import useViewSize from '@/hooks/useViewSize';
+
+const MOBILE_MIN_WIDTH = 768;
 
 export default function Hero() {
-  const isMobile = true;
+  const {width} = useViewSize();
+  const [isMobile, setIsMobile] = useState(true);
+
+  useEffect(() => { 
+    const nextIsMobile = width < MOBILE_MIN_WIDTH;
+    
+    if (isMobile !== nextIsMobile) {
+      setIsMobile(nextIsMobile)
+    }
+  },[width]);
 
   return (
     <div className={style.heroContainer}>
-      <div className={style.heroDisplay}>
-        <h1 className="font-raleway text-2xl md:text-4xl lg:text-6xl text-highlight-white font-extrabold" >
+      <header className={style.heroDisplay}>
+        <h1 className="font-raleway text-4xl sm:text-5xl md:text-6xl lg:text-8xl text-highlight-white font-extrabold" >
           Hero header text display
         </h1>
 
-        <h2 className="font-raleway text-xl md:text-2xl lg:text-4xl font-semibold">
+        <h2 className="font-raleway text-xl md:text-3xl lg:text-4xl font-semibold">
           A impactful text with 2 or more lines.
           <br/>
           Add some animatio to it!
         </h2>
-      </div>
+      </header>
 
       <div 
         className={style.heroVideo}
@@ -24,12 +38,11 @@ export default function Hero() {
         <video 
           className={style.videoElement}
           width='auto'
-          // height='auto'
           autoPlay={true}
           loop={true}
           muted={true}
-          preload='true'
           playsInline={true}
+          poster="images/posters/hero-image.png"
         >
           <source 
             src={`videos/buzzvel-hero${isMobile ? '-mobile' : ''}.mp4`} 

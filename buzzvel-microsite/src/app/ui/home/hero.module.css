@@ -5,12 +5,13 @@
   overflow-x: clip;
   background-image: linear-gradient(
     to bottom, 
-    transparent, 
+    var(--color-dark-bg) 2%,
+    transparent 5%, 
     rgba(0,0,0,0.8) 15%,
-    rgba(0,0,0,0.8) 60%,
-    transparent
+    rgba(0,0,0,0.8) 70%,
+    transparent 95%,
+    var(--color-dark-bg) 96%
   );
-
 }
 .heroVideo {
   position: absolute;
@@ -19,6 +20,14 @@
   z-index: -1;
   margin: 0 -2rem;
   width: auto;
+
+  @media (min-width: 768px) {
+    left: -10%;
+  }
+  
+  @media (min-width: 1024px) {
+    left: 0
+  }
 }
 
 .videoElement {
@@ -33,5 +42,6 @@
   display: flex;
   flex-direction: column;
   gap: 2em;
-  padding: 30% 10% 0 10%;
+  padding: 20vh 10vw 0 10vw;
 }
+

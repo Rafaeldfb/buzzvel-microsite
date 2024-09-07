@@ -1,0 +1,13 @@
+.progress-bar {
+  position: fixed;
+  top: 0;
+  min-width: 100vw;
+  height: 5px;
+  z-index: 5;
+  background: var(--color-brand-red);
+  transform-origin: 0%;
+  @media (min-width: 768px) {
+    position: -webkit-sticky;
+    position: sticky;
+  }
+}

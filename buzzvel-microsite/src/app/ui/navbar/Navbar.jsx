@@ -1,8 +1,10 @@
 'use client'
 
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
+import style from './navbar.module.css';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+import {usePathname} from 'next/navigation';
+import {motion, useScroll } from 'framer-motion';
 import {buzzvelLogoLight, burguerMenuIcon, closeIcon} from '@/app/ui/icons/icons';
 
 function MenuOptions() {
@@ -42,33 +44,42 @@ function MenuOptions() {
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { scrollYProgress } = useScroll();
 
   return (
-    <header className="navbar w-full h-[60px] flex items-center justify-between font-raleway">
-      <div className="navbar-logo px-[3.5px]">
-        <Link href="/">
-          {buzzvelLogoLight()}
-        </Link>
-      </div>
-
-      <div 
-        className="navbar-menu md:hidden relative cursor-pointer" 
-        onClick={() => setMobileMenuOpen(prev => !prev)}
-      >
-        {!mobileMenuOpen ? burguerMenuIcon() : closeIcon()}
+    <>
+      <nav className="navbar w-full h-[60px] flex md:container md:mx-auto items-center justify-between font-raleway">
+        <div className="navbar-logo px-[3.5px]">
+          <Link href="/">
+            {buzzvelLogoLight()}
+          </Link>
+        </div>
 
         <div 
-        className={`absolute top-[50px] right-2 p-10 bg-secondary-bg rounded gap-3 z-50 ${
-          mobileMenuOpen ? 'flex flex-col' : 'hidden'
-        }`}
+          className="navbar-menu md:hidden relative cursor-pointer" 
+          onClick={() => setMobileMenuOpen(prev => !prev)}
         >
+          {!mobileMenuOpen ? burguerMenuIcon() : closeIcon()}
+
+          <div 
+          className={`absolute top-[50px] right-2 p-10 bg-secondary-bg rounded gap-3 z-50 ${
+            mobileMenuOpen ? 'flex flex-col' : 'hidden'
+          }`}
+          >
+            <MenuOptions />
+          </div>
+        </div>
+
+        <div className="navbar-navlinks hidden md:flex gap-3 px-[3.5px]">
           <MenuOptions />
         </div>
-      </div>
 
-      <div className="navbar-navlinks hidden md:flex gap-3 px-[3.5px]">
-        <MenuOptions />
-      </div>
-    </header>
+      </nav>
+    
+      <motion.div 
+        className={style['progress-bar']}
+        style={{ scaleX: scrollYProgress}}
+      />
+    </>
   )
 }
