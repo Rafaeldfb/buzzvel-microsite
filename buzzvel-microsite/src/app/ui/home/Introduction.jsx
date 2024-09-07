@@ -42,14 +42,11 @@ function IntroductionTopics({topic, even}) {
   const imgRef = useRef();
   const isInView = useInView(imgRef, { once: true });
 
-  const mobileEvenImage = even ? '' : '';
-  const mobileEvenContent = even ? '' : '';
-
   return (
     <div 
-      className={`topic-item mb-12 w-full h-[80svh] md:h-auto relative md:static block md:flex md:gap-12 `}
+      className="topic-item mb-12 w-full h-[80svh] md:h-auto relative md:static block md:flex md:gap-12"
     >
-      <figure className={`topic-image relative w-full h-full md:h-auto md:aspect-square md:w-5/12 overflow-hidden`}>
+      <figure className="topic-image relative w-full h-full md:h-auto md:aspect-square md:w-5/12 overflow-hidden">
         <Image
           className="object-cover absolute w-[115%] h-[115%] origin-top-left"
           src={img}
@@ -66,7 +63,9 @@ function IntroductionTopics({topic, even}) {
         />
       </figure>
 
-      <article className="topic-content w-10/12 md:h-fit flex flex-col absolute md:static bottom-2 left-1 p-2 md:p-6 lg:p-12 bg-dynamic-red rounded-md md:rounded-xl">
+      <article 
+        className="topic-content w-10/12 md:h-fit flex flex-col absolute md:static bottom-2 left-1 p-2 md:p-6 lg:p-12 bg-dynamic-red rounded-md md:rounded-xl"
+      >
         <h3 className="text-xl md:text-2xl lg:4xl font-semibold mb-6">
           {title}
         </h3>
