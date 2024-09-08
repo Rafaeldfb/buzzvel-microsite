@@ -8,16 +8,12 @@
   --color-hover-red: #FF4C4C;
   --color-highlight-white: #F2F2F2;
   --color-dark-bg: #0D0D0D;
+  --color-dark-bg-overlay: #0D0D0D88;
   --color-secondary-bg: #1E1E1E;
   --color-light-text: #E0E0E0;
   --color-medium-text: #B0B0B0;
+  scrollbar-color: var(--color-brand-red) var(--color-dark-bg-overlay);
 }
-
-/* @media (prefers-color-scheme: dark) {
-  :root {
-    
-  }
-} */
 
 body {
   color: var(--color-light-text);

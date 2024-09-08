@@ -6,3 +6,9 @@ export function debounce(fn, delay) {
     timeout = setTimeout(() => fn(...args), delay);
   };
 };
+
+export function createId(length=8) {
+  const baseUUID = crypto.randomUUID().replace('-','');
+
+  return baseUUID.slice(0, length);
+};

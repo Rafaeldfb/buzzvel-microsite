@@ -10,11 +10,12 @@ export default function SectionTitle({title, subtitle}) {
   return (
     <div 
       ref={ref} 
-      className="section-header mt-12 mb-8"
+      className="section-header mt-12 mb-8 border-4 border-dark-bg p-12"
       style={{
         transform: isInView ? "none" : "translateX(-200px)",
         opacity: isInView ? 1 : 0,
-        transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s"
+        borderColor: isInView ? 'var(--color-highlight-white)' : 'var(--color-dark-bg-overlay)',
+        transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
       }}
     >
       <h2 className="mb-4 text-highlight-white text-4xl md:text-6xl lg:text-8xl">

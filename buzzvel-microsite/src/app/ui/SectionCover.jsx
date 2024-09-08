@@ -27,17 +27,24 @@ export default function SectionCover({
               maxWidth: 'unset',
               translate: isInView ? ' 0 0' : '0 -50%',
               opacity: isInView ? '1' : '0',
-              transition: "all 1s ease-in-out 0.5s",
+              transition: "all 2s ease-in-out 1s",
             }}
           />
       </figure>
 
-      <div className="cover-header absolute top-2/4 left-1/4 bg-gradient-to-b from-transparent via-dark-bg to-transparent">
-        <h1 className="text-6xl text-highlight-white font-raleway font-bold">
+      {/* <div className="cover-header absolute top-1/4 md:top-2/4 left-8 md:left-1/4 bg-gradient-to-b from-transparent via-dark-bg to-transparent"> */}
+      <div 
+        className="cover-header absolute top-1/4 md:top-2/4 left-8 md:left-1/4 text-display-bg"
+        style={{
+          boxShadow: '0 0 14px 22px var(--color-dark-bg-overlay)',
+          backgroundColor: 'var(--color-dark-bg-overlay)',
+        }}
+      >
+        <h1 className="text-2xl md:text-6xl text-highlight-white font-raleway font-bold">
           {title}
         </h1>
 
-        <h3 className="text-2xl text-highlight-white font-raleway ">
+        <h3 className="text-lg md:text-2xl text-highlight-white font-raleway ">
           {subtitle}
         </h3>
       </div>
