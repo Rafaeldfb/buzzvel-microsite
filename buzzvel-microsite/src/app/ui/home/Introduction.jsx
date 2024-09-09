@@ -52,8 +52,8 @@ export default function Introduction() {
   return (
     <section className="introduction-container container mx-auto">
       <SectionTitle 
-        title="My Introduction"
-        subtitle="A intodution subtitle"
+        title="About me"
+        subtitle="and my career as web developer"
       />
 
       <div className="introduction-content">

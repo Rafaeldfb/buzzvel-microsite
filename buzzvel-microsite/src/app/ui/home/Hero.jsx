@@ -22,13 +22,13 @@ export default function Hero() {
     <div className={style.heroContainer}>
       <header className={style.heroDisplay}>
         <h1 className="font-raleway text-4xl sm:text-5xl md:text-6xl lg:text-8xl text-highlight-white font-extrabold" >
-          Hero header text display
+        I Want to Work at Buzzvel
         </h1>
 
         <h2 className="font-raleway text-xl md:text-3xl lg:text-4xl font-semibold">
-          A impactful text with 2 or more lines.
+          Bringing Innovative Ideas to Life
           <br/>
-          Add some animatio to it!
+          Eager to Contribute to Buzzvel’s Growth
         </h2>
       </header>
 
