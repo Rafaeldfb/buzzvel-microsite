@@ -17,6 +17,29 @@ const roboto = Roboto({
 export const metadata = {
   title: "Rafael at Buzzvel",
   description: "The next Buzzvel developer",
+  keywords: ['Web developer', 'React', 'JavaScript'],
+  creator: 'Rafael DFB',
+  category: 'technology',
+  openGraph: {
+    title: "Rafael at Buzzvel",
+    description: "The next Buzzvel developer",
+    url: "https://your-site-url.com", // Replace with your actual site URL
+    image: "/images/og-image.png", // Path to your OG image
+    type: "website",
+  },
+  robots: {
+    index: false,
+    follow: true,
+    nocache: true,
+    googleBot: {
+      index: true,
+      follow: false,
+      noimageindex: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
 };
 
 export default function RootLayout({ children }) {
