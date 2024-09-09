@@ -3,6 +3,8 @@
 import React, { useState, useRef } from 'react';
 import { FramerCarousel } from './FramerCarousel';
 import { portfolio } from '@/data/portfolio';
+import { arrowRightCircle } from '@/app/ui/icons/icons.js';
+import Link from 'next/link';
 
 
 export default function Carousel({projects}) {
@@ -23,8 +25,12 @@ export default function Carousel({projects}) {
       
       {activeProject && (
         <div className="carousel-about mmax-w-full md:max-w-[80vw] lg:max-w-[60vw] mx-auto my-10">
-          <div className="about-name text-4xl md:text-6xl font-semibold">
+          <div className="about-name text-4xl md:text-6xl font-semibold flex items-center content-between">
             {activeProject.name}
+
+            <a className="m-auto" href={activeProject.link} target='_blanck'>
+              {arrowRightCircle()}
+            </a>
           </div>
 
           <div className="about-type text-lg md:text-xl text-dynamic-red mb-2">

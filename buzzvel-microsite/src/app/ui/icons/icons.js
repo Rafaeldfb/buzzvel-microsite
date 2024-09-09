@@ -106,3 +106,29 @@ export function closeIcon(
     </svg>
   )
 }
+
+export function arrowRightCircle(
+  width="48",
+  height="48",
+  viewBox="0 0 48 48",
+  fill="#BE0000"
+) {
+  return (
+    <svg 
+      width={width}
+      height={height}
+      viewBox={viewBox}
+      fill="none" 
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path 
+        d="M24 32L32 24M32 24L24 16M32 24H16M44 24C44 35.0457 35.0457 44 24 44C12.9543 44 4 35.0457 4 24C4 12.9543 12.9543 4 24 4C35.0457 4 44 12.9543 44 24Z" 
+        stroke={fill} 
+        strokeWidth="4" 
+        strokeLinecap="round" 
+        strokeLinejoin="round" 
+      />
+    </svg>
+
+  )
+}
